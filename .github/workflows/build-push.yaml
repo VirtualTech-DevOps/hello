@@ -35,5 +35,7 @@ jobs:
           tags: |
             ghcr.io/${{ steps.repository.outputs.name }}:latest
             ghcr.io/${{ steps.repository.outputs.name }}:${{ steps.commit-hash.outputs.short }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
       - id: image
         run: echo "name=ghcr.io/${{ steps.repository.outputs.name }}:${{ steps.commit-hash.outputs.short }}" >> $GITHUB_OUTPUT
