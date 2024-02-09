@@ -32,6 +32,8 @@ jobs:
       - uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ steps.repository.outputs.name }}:latest,${{ steps.repository.outputs.name }}:${{ steps.commit-hash.outputs.short }}
+          tags: |
+            ghcr.io/${{ steps.repository.outputs.name }}:latest
+            ghcr.io/${{ steps.repository.outputs.name }}:${{ steps.commit-hash.outputs.short }}
       - id: image
-        run: echo "name=${{ steps.repository.outputs.name }}:${{ steps.commit-hash.outputs.short }}" >> $GITHUB_OUTPUT
+        run: echo "name=ghcr.io/${{ steps.repository.outputs.name }}:${{ steps.commit-hash.outputs.short }}" >> $GITHUB_OUTPUT
