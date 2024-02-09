@@ -6,7 +6,7 @@ on:
     paths:
       - index.html
       - Dockerfile
-      - .github/workflows/actions.yaml
+      - .github/workflows/build-push.yaml
 
 jobs:
   build-push:
