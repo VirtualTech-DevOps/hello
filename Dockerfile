@@ -1,3 +1,3 @@
-FROM nginx:1.25-alpine-slim
+FROM nginx:1.25-bullseye
 
 COPY index.html /usr/share/nginx/html
